@@ -26,3 +26,28 @@ plt.imshow(imgGray2, cmap='gray')
 # Cria nova janela com histograma
 plt.figure()
 plt.hist(imgGray2.ravel(), bins=256)
+
+# Ajustando contraste
+mult = 2
+adit = -200
+imgGray3 = cv2.convertScaleAbs(imgGray, alpha=mult, beta=adit)
+
+plt.figure()
+plt.imshow(imgGray3, cmap='gray')
+
+plt.figure()
+plt.hist(imgGray3.ravel(), bins=256)
+
+# Ajustando contraste
+mult = 0.5
+adit = 0
+imgGray3 = cv2.convertScaleAbs(imgGray, alpha=mult, beta=adit)
+
+
+plt.figure()
+plt.imshow(imgGray3, cmap='gray')
+
+
+
+plt.figure()
+plt.hist(imgGray3.ravel(), bins=256)
